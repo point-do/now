@@ -9,6 +9,21 @@
 <p></p>
 <script type="text/javascript"src="https://studio-dg.GitHub.io/jquery.min.js"></script>
 <script>
+
+// 生成する文字列の長さ
+var l = 8;
+
+// 生成する文字列に含める文字セット
+var c = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+var cl = c.length;
+var r = "";
+for(var i=0; i<l; i++){
+  r += c[Math.floor(Math.random()*cl)];
+};
+
+document.head.insertAdjacentHTML('beforeend', '<p>r</p>');
+//==========ブラウザバック==========
 $(function(){
  history.pushState(null, null, null); //ブラウザバック無効化
  //ブラウザバックボタン押下時
@@ -17,22 +32,6 @@ $(function(){
    window.alert('前のページに戻る場合、前に戻るボタンから戻ってください。');
  });
 });
-// 生成する文字列の長さ
-var l = 10;
-
-// 生成する文字列に含める文字セット
-var c = "abcdefghijklmnopqrstuvwxyz0123456789-_";
-
-var cl = c.length;
-var r = "";
-for(var i=0; i<l; i++){
-  r += c[Math.floor(Math.random()*cl)];
-};
-
-jQuery(function($) {
-$(“#innerhtml”).html("r");
-});
-
 </script>
 </body>
 </html>
